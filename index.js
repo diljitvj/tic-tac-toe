@@ -108,7 +108,7 @@ function onBoxClick() {
   const rowIdx = this.getAttribute("rowIdx");
   const colIdx = this.getAttribute("colIdx");
 
-  if (!grid[colIdx][rowIdx]) {
+  if (!grid[colIdx][rowIdx] && !getWinner()) {
     grid[colIdx][rowIdx] = turn;
     const winner = getWinner();
 
