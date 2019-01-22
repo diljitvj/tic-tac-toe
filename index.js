@@ -131,6 +131,12 @@ function changePlayer() {
   if (turn === 1) {
     turn = 1;
     makeComputerMove();
+    const winner = getWinner();
+    if (winner) {
+      const winnerName = winner === 1 ? "X" : "O";
+      renderMainGrid();
+      renderGameStatus("Player " + winnerName + " wins");
+    }
   } else {
     turn = 2;
   }
